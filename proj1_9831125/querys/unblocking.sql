@@ -1,0 +1,1 @@
+delete from blocked where blocker='sk' and blocked='mmdch'
