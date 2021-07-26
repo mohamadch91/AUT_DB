@@ -1,0 +1,1 @@
+delete from follower where  following_id='mmdch' and following_id='sk'

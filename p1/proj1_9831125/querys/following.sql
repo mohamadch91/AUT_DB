@@ -1,0 +1,1 @@
+insert into follower values('sk', 'mmdch')
