@@ -1,0 +1,476 @@
+INSERT INTO TECH_PERSONNEL VALUES (
+  18, 
+  'Ahmad', 
+  'Sharaki',
+  5,
+  'Keyboard', 
+  '+98921515'
+);
+
+INSERT INTO TECH_PERSONNEL VALUES (
+  22, 
+  'Muhammad', 
+  'Salehi',
+  2,
+  'Computer Disk', 
+  '+98921621'
+);
+
+INSERT INTO TECH_PERSONNEL VALUES (
+  43, 
+  'Saleh', 
+  'Maryami',
+  11,
+  'Mouse', 
+  '+98921525'
+);
+
+INSERT INTO TECH_PERSONNEL VALUES (
+  29, 
+  'Zahra', 
+  'Yardoost',
+  12,
+  'LCD', 
+  '+98921623'
+);
+
+INSERT INTO TECH_PERSONNEL VALUES (
+  33, 
+  'Sahand', 
+  'Ziaee',
+  2,
+  'Computer Disk', 
+  '+98921617'
+);
+
+INSERT INTO USERS VALUES (
+  9631805, 
+  'Matin', 
+  'Tavakoli', 
+  45, 
+  '+98921805'
+);
+
+INSERT INTO USERS VALUES (
+  9631035, 
+  'Hossein', 
+  'Zaredar', 
+  23, 
+  '+98921035'
+);
+
+INSERT INTO USERS VALUES (
+  9631419, 
+  'Kasra', 
+  'Mojallal', 
+  52, 
+  '+98921419'
+);
+
+INSERT INTO USER_OFFICE (office_no,building) VALUES (
+  '12', 
+  'Aburehyan'
+);
+
+INSERT INTO CATEGORIES (category_id,category,description) VALUES (
+  '5',
+  'Keyboard',
+  'broken keyboards'
+);
+
+INSERT INTO CATEGORIES (category_id,category,description) VALUES (
+  '2',
+  'Computer Case',
+  'broken computer cases'
+);
+
+INSERT INTO CATEGORIES (category_id,category,description) VALUES (
+  '11',
+  'Mouse',
+  'broken mouses'
+);
+
+INSERT INTO CATEGORIES (category_id,category,description) VALUES (
+  '12',
+  'LCD',
+  'broken LCDs'
+);
+
+INSERT INTO INVENTORY (machine_name,IP,network_port,MACADDR,location_id) VALUES (
+  'IdeaPad L340',
+  '151.243.22.110',
+  '80',
+  'f8:75:a4:15:50:d7',
+  '12'
+);
+
+INSERT INTO INVENTORY (machine_name,IP,network_port,MACADDR,location_id) VALUES (
+  'Surface Pro 6 - B',
+  '126.224.12.102',
+  '80',
+  'e3:24:d2:37:13:c3',
+  '12'
+);
+
+INSERT INTO INVENTORY (machine_name,IP,network_port,MACADDR,location_id) VALUES (
+  'MacBook Air MVFJ2 2019',
+  '113.123.21.231',
+  '80',
+  'a8:32:c7:23:50:e3',
+  '12'
+);
+
+INSERT INTO LOCATIONS (location_id,location,building,notes) VALUES (
+  '12',
+  'Valiasr',
+  'Abureyhan',
+  'no notes'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1217',
+  '9631419',
+  '2015-11-02',
+  '2015-11-02',
+  '1',
+  '5',
+  'MacBook Air MVFJ2 2019',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1218',
+  '9631419',
+  '2015-11-04',
+  '2015-11-04',
+  '1',
+  '11',
+  'MacBook Air MVFJ2 2019',
+  'Mouse not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1223',
+  '9631035',
+  '2015-11-06',
+  '2015-11-08',
+  '3',
+  '2',
+  'Surface Pro 6 - B',
+  'Computer Disk not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1224',
+  '9631035',
+  '2015-11-09',
+  '2015-11-09',
+  '1',
+  '11',
+  'Surface Pro 6 - B',
+  'Mouse not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1225',
+  '9631035',
+  '2015-11-10',
+  '2015-11-10',
+  '1',
+  '5',
+  'Surface Pro 6 - B',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1226',
+  '9631035',
+  '2015-11-11',
+  '2015-11-11',
+  '1',
+  '12',
+  'Surface Pro 6 - B',
+  'LCD not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1345',
+  '9631805',
+  '2015-11-12',
+  '2015-11-19',
+  '8',
+  '5',
+  'IdeaPad L340',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1346',
+  '9631805',
+  '2015-11-20',
+  '2015-11-23',
+  '4',
+  '2',
+  'IdeaPad L340',
+  'Computer Disk not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1347',
+  '9631805',
+  '2015-11-24',
+  '2015-11-25',
+  '2',
+  '11',
+  'IdeaPad L340',
+  'Mouse not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1348',
+  '9631805',
+  '2015-11-26',
+  '2015-11-28',
+  '3',
+  '12',
+  'IdeaPad L340',
+  'LCD not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '1349',
+  '9631419',
+  '2015-11-29',
+  '2015-11-30',
+  '2',
+  '2',
+  'MacBook Air MVFJ2 2019',
+  'Computer Disk not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '2212',
+  '9631035',
+  '2017-09-02',
+  '2017-09-09',
+  '8',
+  '12',
+  'Surface Pro 6 - B',
+  'LCD not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '2213',
+  '9631035',
+  '2017-10-12',
+  '2017-10-14',
+  '3',
+  '11',
+  'Surface Pro 6 - B',
+  'Mouse not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '2214',
+  '9631035',
+  '2017-10-18',
+  '2017-10-20',
+  '3',
+  '5',
+  'Surface Pro 6 - B',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '2215',
+  '9631035',
+  '2017-11-29',
+  '2017-11-30',
+  '2',
+  '2',
+  'Surface Pro 6 - B',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '2216',
+  '9631035',
+  '2017-12-10',
+  '2017-12-14',
+  '5',
+  '12',
+  'Surface Pro 6 - B',
+  'LCD not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3534',
+  '9631419',
+  '2018-02-12',
+  '2018-02-14',
+  '3',
+  '11',
+  'MacBook Air MVFJ2 2019',
+  'Mouse not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3535',
+  '9631419',
+  '2018-02-21',
+  '2018-02-29',
+  '9',
+  '12',
+  'MacBook Air MVFJ2 2019',
+  'LCD not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3536',
+  '9631419',
+  '2018-04-12',
+  '2018-04-15',
+  '4',
+  '5',
+  'MacBook Air MVFJ2 2019',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3537',
+  '9631419',
+  '2018-05-02',
+  '2018-05-09',
+  '8',
+  '5',
+  'MacBook Air MVFJ2 2019',
+  'Keyboard not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3538',
+  '9631419',
+  '2018-08-19',
+  '2018-08-22',
+  '4',
+  '2',
+  'MacBook Air MVFJ2 2019',
+  'Computer Disk not working'
+);
+
+INSERT INTO TICKETS (ticket_number,owner_pplSoft,date_submitted,date_closed,days_worked_on,category_id,machine_name,description) VALUES (
+  '3539',
+  '9631419',
+  '2018-09-04',
+  '2018-09-07',
+  '4',
+  '2',
+  'MacBook Air MVFJ2 2019',
+  'Computer Disk not working'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '1345',
+  '18',
+  '2015-11-12',
+  'closed successful',
+  'fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '2214',
+  '18',
+  '2017-10-18',
+  'closed unsuccessful',
+  'not fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '2215',
+  '18',
+  '2017-11-29',
+  'delegated',
+  'postponed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '3536',
+  '18',
+  '2018-04-12',
+  'closed successful',
+  'fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '3537',
+  '18',
+  '2018-05-02',
+  'delegated',
+  'postponed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '1346',
+  '22',
+  '2015-11-20',
+  'closed successful',
+  'fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '3538',
+  '22',
+  '2018-08-19',
+  'closed successful',
+  'fixed'
+);
+
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '3539',
+  '22',
+  '2018-09-04',
+  'delegated',
+  'postponed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '1347',
+  '43',
+  '2015-11-24',
+  'closed successful',
+  'fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '1349',
+  '22',
+  '2015-11-29',
+  'delegated',
+  'postponed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '1349',
+  '33',
+  '2015-11-30',
+  'closed successful',
+  'fixed'
+);
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '2213',
+  '43',
+  '2017-10-12',
+  'closed unsuccessful',
+  'not fixed'
+);
+
+
+INSERT INTO ASSIGNMENT (ticket_number,tech_pplSoft,date_assigned,status,outcome) VALUES (
+  '3534',
+  '43',
+  '2018-02-12',
+  'closed successful',
+  'fixed'
+);

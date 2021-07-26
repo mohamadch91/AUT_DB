@@ -1,0 +1,2 @@
+ALTER TABLE TICKETS
+ADD CHECK (days_worked_on>=0);

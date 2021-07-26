@@ -1,0 +1,6 @@
+CREATE VIEW [Ticket_Info] AS
+SELECT TP.fname, TP.lname, 
+	A.status, A.tech_pplSoft,  
+	T.ticket_number, T.owner_pplSoft, T.date_submitted, T.date_closed, T.days_worked_on, T.category_id, T.machine_name, T.description 
+FROM TICKETS AS T, ASSIGNMENT AS A, TECH_PERSONNEL AS TP 
+ON T.ticket_number = A.ticket_number AND A.tech_pplsoft = TP.pplSoft AND A.status != 'delegated';

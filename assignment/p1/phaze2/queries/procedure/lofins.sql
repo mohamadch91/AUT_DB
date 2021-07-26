@@ -1,0 +1,11 @@
+DELIMITER //
+
+CREATE PROCEDURE History (
+)
+BEGIN
+	SELECT * 
+    FROM login 
+    ORDER BY TIME DESC;
+END //
+
+DELIMITER ;

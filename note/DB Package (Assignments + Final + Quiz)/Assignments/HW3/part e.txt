@@ -1,0 +1,10 @@
+CREATE TRIGGER Update_Work_Days
+ON ASSIGNMENT
+AFTER UPDATE
+AS BEGIN
+Update T 
+SET T.days_worked_on = T.days_worked_on + julianday(CURRENT_DATE) - julianday(DATE(A.date_assigned)) + 1
+FROM TICKETS AS T
+INNER JOIN inserted AS A
+ON T.pplsoft = A.tech_pplsoft AND A.status in ('delegated', 'closed successful', 'closed unsuccessful')
+END

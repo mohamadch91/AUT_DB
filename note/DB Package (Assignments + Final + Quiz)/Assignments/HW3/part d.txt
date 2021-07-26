@@ -1,0 +1,46 @@
+------------------------------------------------------------
+1.
+SELECT fname, lname, COUNT(ticket_number) as n FROM (SELECT *
+FROM TICKETS as T
+INNER JOIN USERS as u
+ON t.owner_pplsoft = u.pplsoft)
+GROUP BY owner_pplsoft
+HAVING n > 3
+ORDER BY N DESC;
+------------------------------------------------------------
+2.
+WITH Closed_Tickets AS (SELECT fname,lname, N FROM (SELECT *, COUNT(pplsoft) AS N FROM TECH_PERSONNEL AS T, ASSIGNMENT AS A ON T.pplSoft = A.tech_pplSoft AND A.status in ('closed successful', 'closed unsuccessful')
+GROUP BY pplsoft))
+SELECT * FROM Closed_Tickets
+WHERE N = (SELECT MAX(N) FROM Closed_Tickets)
+------------------------------------------------------------
+3.
+--Grouping by date_submitted:
+	WITH Nov2015_Machines AS
+	(SELECT *, COUNT(ticket_number) AS N FROM TICKETS
+	WHERE date_submitted LiKE '2015-11-%'
+	GROUP BY machine_name )
+	SELECT machine_name, N FROM Nov2015_Machines WHERE N = (SELECT MAX(N) FROM Nov2015_Machines)
+--Grouping by location_id:
+	WITH Building12_Machines AS (SELECT *, COUNT(owner_pplsoft) as N FROM TICKETS, INVENTORY ON TICKETS.machine_name = INVENTORY.machine_name
+	WHERE location_id = '12' AND date_submitted LIKE  '2015-11-%'
+	GROUP BY owner_pplsoft)
+	SELECT machine_name, N FROM Building12_Machines WHERE N = (SELECT MAX(N) FROM Building12_Machines)
+------------------------------------------------------------
+4.
+SELECT AVG(days_worked_on) FROM TICKETS WHERE date_submitted LIKE '2015-11-%'
+------------------------------------------------------------
+5.
+SELECT fname, lname, ticket_number, sum(sum_of_work_days) as total_days FROM (WITH Nov2015_Tech_Personnel AS (SELECT * FROM TECH_PERSONNEL AS TP, ASSIGNMENT AS A, TICKETS AS T 
+                                ON TP.pplsoft = A.tech_pplSoft AND T.ticket_number = A.ticket_number
+WHERE A.date_assigned LIKE '2015-11-%')
+SELECT fname, lname, pplsoft, ticket_number, date_submitted, date_assigned, date_closed, days_worked_on,
+CASE
+WHEN status != 'delegated' THEN julianday(DATE(date_closed)) - julianday(DATE(date_assigned)) + 1
+WHEN status = 'delegated' THEN (SELECT (julianday(DATE(A2.date_assigned)) - julianday(DATE(A1.date_assigned)) + 1) FROM ASSIGNMENT AS A1, ASSIGNMENT AS A2 WHERE A1.ticket_number = A2.ticket_number AND (A1.status = 'delegated'))
+END AS sum_of_work_days
+FROM Nov2015_Tech_Personnel)
+GROUP BY pplsoft
+ORDER BY total_days DESC
+------------------------------------------------------------
+6. eliminated

@@ -1,0 +1,77 @@
+CREATE DATABASE HARDWARE_TECH_SUPPORT;
+
+CREATE TABLE TECH_PERSONNEL(
+    pplSoft int NOT NULL,
+    fname varchar(25),
+    lname varchar(25),
+    pittID int,
+    expertise varchar(25),
+    office_phone int,
+    PRIMARY KEY (pplSoft)
+);
+
+CREATE TABLE USERS(
+    pplSoft int NOT NULL,
+    fname varchar(25),
+    lname varchar(25),
+    pittID int,
+    office_phone int,
+    PRIMARY KEY (pplSoft)
+);
+
+CREATE TABLE USER_OFFICE(
+    office_no int NOT NULL,
+    building varchar(25),
+    PRIMARY KEY (office_no)
+);
+
+CREATE TABLE CATEGORIES(
+    category_id int NOT NULL,
+    category varchar(25),
+    description varchar(50),    
+    PRIMARY KEY (category_id)
+);
+
+CREATE TABLE LOCATIONS(
+    location_id int NOT NULL,
+    location varchar(25),
+    building varchar(25),
+    notes varchar(50),
+    PRIMARY KEY (location_id)
+);
+
+CREATE TABLE INVENTORY(
+    machine_name varchar(25) NOT NULL,
+    IP varchar(25),
+    network_port int,
+    MACADDR varchar(25),
+    location_id int,
+    PRIMARY KEY (machine_name)
+    FOREIGN KEY (location_id) REFERENCES LOCATIONS(location_id)
+);
+
+CREATE TABLE TICKETS(
+    ticket_number int NOT NULL,
+    owner_pplSoft int,
+    date_submitted char(10),
+    date_closed char(10),
+    days_worked_on int,
+    category_id int,
+    machine_name varchar(25),
+    description varchar(50),
+    PRIMARY KEY (ticket_number)
+    FOREIGN KEY (owner_pplSoft) REFERENCES USERS(pplSoft)
+    FOREIGN KEY (category_id) REFERENCES CATEGORIES(category_id)
+    FOREIGN KEY (machine_name) REFERENCES INVENTORY(machine_name)
+);
+
+CREATE TABLE ASSIGNMENT(
+    ticket_number int NOT NULL,
+    tech_pplSoft int NOT NULL,
+    date_assigned char(10) NOT NULL,
+    status varchar(25),
+    outcome varchar(25),
+    PRIMARY KEY (ticket_number, tech_pplSoft, date_assigned)
+    FOREIGN KEY (ticket_number) REFERENCES TICKETS(ticket_number)
+    FOREIGN KEY (tech_pplSoft) REFERENCES TECH_PERSONNEL(pplSoft)
+);

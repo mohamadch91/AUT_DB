@@ -1,0 +1,1 @@
+insert into blocked values('mamadch	', 'sk')
